@@ -1,0 +1,1515 @@
+/* pyconfig.h.in.  Generated from configure.ac by autoheader.  */
+
+
+#ifndef Py_PYCONFIG_H
+#define Py_PYCONFIG_H
+
+
+/* Define if building universal (internal helper macro) */
+#mesondefine AC_APPLE_UNIVERSAL_BUILD
+
+/* Define for AIX if your compiler is a genuine IBM xlC/xlC_r and you want
+   support for AIX C++ shared extension modules. */
+#mesondefine AIX_GENUINE_CPLUSPLUS
+
+/* The Android API level. */
+#mesondefine ANDROID_API_LEVEL
+
+/* Define if C doubles are 64-bit IEEE 754 binary format, stored in ARM
+   mixed-endian order (byte order 45670123) */
+#mesondefine DOUBLE_IS_ARM_MIXED_ENDIAN_IEEE754
+
+/* Define if C doubles are 64-bit IEEE 754 binary format, stored with the most
+   significant byte first */
+#mesondefine DOUBLE_IS_BIG_ENDIAN_IEEE754
+
+/* Define if C doubles are 64-bit IEEE 754 binary format, stored with the
+   least significant byte first */
+#mesondefine DOUBLE_IS_LITTLE_ENDIAN_IEEE754
+
+/* Define if --enable-ipv6 is specified */
+#mesondefine ENABLE_IPV6
+
+/* Define if flock needs to be linked with bsd library. */
+#mesondefine FLOCK_NEEDS_LIBBSD
+
+/* Define if getpgrp() must be called as getpgrp(0). */
+#mesondefine GETPGRP_HAVE_ARG
+
+/* Define if gettimeofday() does not have second (timezone) argument This is
+   the case on Motorola V4 (R40V4.2) */
+#mesondefine GETTIMEOFDAY_NO_TZ
+
+/* Define to 1 if you have the `accept4' function. */
+#mesondefine HAVE_ACCEPT4
+
+/* Define to 1 if you have the `acosh' function. */
+#mesondefine HAVE_ACOSH
+
+/* struct addrinfo (netdb.h) */
+#mesondefine HAVE_ADDRINFO
+
+/* Define to 1 if you have the `alarm' function. */
+#mesondefine HAVE_ALARM
+
+/* Define if aligned memory access is required */
+#mesondefine HAVE_ALIGNED_REQUIRED
+
+/* Define to 1 if you have the <alloca.h> header file. */
+#mesondefine HAVE_ALLOCA_H
+
+/* Define this if your time.h defines altzone. */
+#mesondefine HAVE_ALTZONE
+
+/* Define to 1 if you have the `asinh' function. */
+#mesondefine HAVE_ASINH
+
+/* Define to 1 if you have the <asm/types.h> header file. */
+#mesondefine HAVE_ASM_TYPES_H
+
+/* Define to 1 if you have the `atanh' function. */
+#mesondefine HAVE_ATANH
+
+/* Define to 1 if you have the `bind_textdomain_codeset' function. */
+#mesondefine HAVE_BIND_TEXTDOMAIN_CODESET
+
+/* Define to 1 if you have the <bluetooth/bluetooth.h> header file. */
+#mesondefine HAVE_BLUETOOTH_BLUETOOTH_H
+
+/* Define to 1 if you have the <bluetooth.h> header file. */
+#mesondefine HAVE_BLUETOOTH_H
+
+/* Define if mbstowcs(NULL, "text", 0) does not return the number of wide
+   chars that would be converted. */
+#mesondefine HAVE_BROKEN_MBSTOWCS
+
+/* Define if nice() returns success/failure instead of the new priority. */
+#mesondefine HAVE_BROKEN_NICE
+
+/* Define if the system reports an invalid PIPE_BUF value. */
+#mesondefine HAVE_BROKEN_PIPE_BUF
+
+/* Define if poll() sets errno on invalid file descriptors. */
+#mesondefine HAVE_BROKEN_POLL
+
+/* Define if the Posix semaphores do not work on your system */
+#mesondefine HAVE_BROKEN_POSIX_SEMAPHORES
+
+/* Define if pthread_sigmask() does not work on your system. */
+#mesondefine HAVE_BROKEN_PTHREAD_SIGMASK
+
+/* define to 1 if your sem_getvalue is broken. */
+#mesondefine HAVE_BROKEN_SEM_GETVALUE
+
+/* Define if `unsetenv` does not return an int. */
+#mesondefine HAVE_BROKEN_UNSETENV
+
+/* Has builtin atomics */
+#mesondefine HAVE_BUILTIN_ATOMIC
+
+/* Define to 1 if you have the 'chflags' function. */
+#mesondefine HAVE_CHFLAGS
+
+/* Define to 1 if you have the `chown' function. */
+#mesondefine HAVE_CHOWN
+
+/* Define if you have the 'chroot' function. */
+#mesondefine HAVE_CHROOT
+
+/* Define to 1 if you have the `clock' function. */
+#mesondefine HAVE_CLOCK
+
+/* Define to 1 if you have the `clock_getres' function. */
+#mesondefine HAVE_CLOCK_GETRES
+
+/* Define to 1 if you have the `clock_gettime' function. */
+#mesondefine HAVE_CLOCK_GETTIME
+
+/* Define to 1 if you have the `clock_settime' function. */
+#mesondefine HAVE_CLOCK_SETTIME
+
+/* Define if the C compiler supports computed gotos. */
+#mesondefine HAVE_COMPUTED_GOTOS
+
+/* Define to 1 if you have the `confstr' function. */
+#mesondefine HAVE_CONFSTR
+
+/* Define to 1 if you have the <conio.h> header file. */
+#mesondefine HAVE_CONIO_H
+
+/* Define to 1 if you have the `copysign' function. */
+#mesondefine HAVE_COPYSIGN
+
+/* Define to 1 if you have the `ctermid' function. */
+#mesondefine HAVE_CTERMID
+
+/* Define if you have the 'ctermid_r' function. */
+#mesondefine HAVE_CTERMID_R
+
+/* Define to 1 if you have the <curses.h> header file. */
+#mesondefine HAVE_CURSES_H
+
+/* Define if you have the 'is_term_resized' function. */
+#mesondefine HAVE_CURSES_IS_TERM_RESIZED
+
+/* Define if you have the 'resizeterm' function. */
+#mesondefine HAVE_CURSES_RESIZETERM
+
+/* Define if you have the 'resize_term' function. */
+#mesondefine HAVE_CURSES_RESIZE_TERM
+
+/* Define to 1 if you have the declaration of `isfinite', and to 0 if you
+   don't. */
+#mesondefine HAVE_DECL_ISFINITE
+
+/* Define to 1 if you have the declaration of `isinf', and to 0 if you don't.
+   */
+#mesondefine HAVE_DECL_ISINF
+
+/* Define to 1 if you have the declaration of `isnan', and to 0 if you don't.
+   */
+#mesondefine HAVE_DECL_ISNAN
+
+/* Define to 1 if you have the declaration of `RTLD_DEEPBIND', and to 0 if you
+   don't. */
+#mesondefine HAVE_DECL_RTLD_DEEPBIND
+
+/* Define to 1 if you have the declaration of `RTLD_GLOBAL', and to 0 if you
+   don't. */
+#mesondefine HAVE_DECL_RTLD_GLOBAL
+
+/* Define to 1 if you have the declaration of `RTLD_LAZY', and to 0 if you
+   don't. */
+#mesondefine HAVE_DECL_RTLD_LAZY
+
+/* Define to 1 if you have the declaration of `RTLD_LOCAL', and to 0 if you
+   don't. */
+#mesondefine HAVE_DECL_RTLD_LOCAL
+
+/* Define to 1 if you have the declaration of `RTLD_NODELETE', and to 0 if you
+   don't. */
+#mesondefine HAVE_DECL_RTLD_NODELETE
+
+/* Define to 1 if you have the declaration of `RTLD_NOLOAD', and to 0 if you
+   don't. */
+#mesondefine HAVE_DECL_RTLD_NOLOAD
+
+/* Define to 1 if you have the declaration of `RTLD_NOW', and to 0 if you
+   don't. */
+#mesondefine HAVE_DECL_RTLD_NOW
+
+/* Define to 1 if you have the declaration of `tzname', and to 0 if you don't.
+   */
+#mesondefine HAVE_DECL_TZNAME
+
+/* Define to 1 if you have the device macros. */
+#mesondefine HAVE_DEVICE_MACROS
+
+/* Define to 1 if you have the /dev/ptc device file. */
+#mesondefine HAVE_DEV_PTC
+
+/* Define to 1 if you have the /dev/ptmx device file. */
+#mesondefine HAVE_DEV_PTMX
+
+/* Define to 1 if you have the <direct.h> header file. */
+#mesondefine HAVE_DIRECT_H
+
+/* Define to 1 if the dirent structure has a d_type field */
+#mesondefine HAVE_DIRENT_D_TYPE
+
+/* Define to 1 if you have the <dirent.h> header file, and it defines `DIR'.
+   */
+#mesondefine HAVE_DIRENT_H
+
+/* Define if you have the 'dirfd' function or macro. */
+#mesondefine HAVE_DIRFD
+
+/* Define to 1 if you have the <dlfcn.h> header file. */
+#mesondefine HAVE_DLFCN_H
+
+/* Define to 1 if you have the `dlopen' function. */
+#mesondefine HAVE_DLOPEN
+
+/* Define to 1 if you have the `dup2' function. */
+#mesondefine HAVE_DUP2
+
+/* Define to 1 if you have the `dup3' function. */
+#mesondefine HAVE_DUP3
+
+/* Defined when any dynamic module loading is enabled. */
+#mesondefine HAVE_DYNAMIC_LOADING
+
+/* Define to 1 if you have the <endian.h> header file. */
+#mesondefine HAVE_ENDIAN_H
+
+/* Define if you have the 'epoll' functions. */
+#mesondefine HAVE_EPOLL
+
+/* Define if you have the 'epoll_create1' function. */
+#mesondefine HAVE_EPOLL_CREATE1
+
+/* Define to 1 if you have the `erf' function. */
+#mesondefine HAVE_ERF
+
+/* Define to 1 if you have the `erfc' function. */
+#mesondefine HAVE_ERFC
+
+/* Define to 1 if you have the <errno.h> header file. */
+#mesondefine HAVE_ERRNO_H
+
+/* Define to 1 if you have the `execv' function. */
+#mesondefine HAVE_EXECV
+
+/* Define to 1 if you have the `expm1' function. */
+#mesondefine HAVE_EXPM1
+
+/* Define to 1 if you have the `faccessat' function. */
+#mesondefine HAVE_FACCESSAT
+
+/* Define if you have the 'fchdir' function. */
+#mesondefine HAVE_FCHDIR
+
+/* Define to 1 if you have the `fchmod' function. */
+#mesondefine HAVE_FCHMOD
+
+/* Define to 1 if you have the `fchmodat' function. */
+#mesondefine HAVE_FCHMODAT
+
+/* Define to 1 if you have the `fchown' function. */
+#mesondefine HAVE_FCHOWN
+
+/* Define to 1 if you have the `fchownat' function. */
+#mesondefine HAVE_FCHOWNAT
+
+/* Define to 1 if you have the <fcntl.h> header file. */
+#mesondefine HAVE_FCNTL_H
+
+/* Define if you have the 'fdatasync' function. */
+#mesondefine HAVE_FDATASYNC
+
+/* Define to 1 if you have the `fdopendir' function. */
+#mesondefine HAVE_FDOPENDIR
+
+/* Define to 1 if you have the `fexecve' function. */
+#mesondefine HAVE_FEXECVE
+
+/* Define to 1 if you have the `finite' function. */
+#mesondefine HAVE_FINITE
+
+/* Define to 1 if you have the `flock' function. */
+#mesondefine HAVE_FLOCK
+
+/* Define to 1 if you have the `fork' function. */
+#mesondefine HAVE_FORK
+
+/* Define to 1 if you have the `forkpty' function. */
+#mesondefine HAVE_FORKPTY
+
+/* Define to 1 if you have the `fpathconf' function. */
+#mesondefine HAVE_FPATHCONF
+
+/* Define to 1 if you have the `fseek64' function. */
+#mesondefine HAVE_FSEEK64
+
+/* Define to 1 if you have the `fseeko' function. */
+#mesondefine HAVE_FSEEKO
+
+/* Define to 1 if you have the `fstatat' function. */
+#mesondefine HAVE_FSTATAT
+
+/* Define to 1 if you have the `fstatvfs' function. */
+#mesondefine HAVE_FSTATVFS
+
+/* Define if you have the 'fsync' function. */
+#mesondefine HAVE_FSYNC
+
+/* Define to 1 if you have the `ftell64' function. */
+#mesondefine HAVE_FTELL64
+
+/* Define to 1 if you have the `ftello' function. */
+#mesondefine HAVE_FTELLO
+
+/* Define to 1 if you have the `ftime' function. */
+#mesondefine HAVE_FTIME
+
+/* Define to 1 if you have the `ftruncate' function. */
+#mesondefine HAVE_FTRUNCATE
+
+/* Define to 1 if you have the `futimens' function. */
+#mesondefine HAVE_FUTIMENS
+
+/* Define to 1 if you have the `futimes' function. */
+#mesondefine HAVE_FUTIMES
+
+/* Define to 1 if you have the `futimesat' function. */
+#mesondefine HAVE_FUTIMESAT
+
+/* Define to 1 if you have the `gai_strerror' function. */
+#mesondefine HAVE_GAI_STRERROR
+
+/* Define to 1 if you have the `gamma' function. */
+#mesondefine HAVE_GAMMA
+
+/* Define if we can use gcc inline assembler to get and set mc68881 fpcr */
+#mesondefine HAVE_GCC_ASM_FOR_MC68881
+
+/* Define if we can use x64 gcc inline assembler */
+#mesondefine HAVE_GCC_ASM_FOR_X64
+
+/* Define if we can use gcc inline assembler to get and set x87 control word
+   */
+#mesondefine HAVE_GCC_ASM_FOR_X87
+
+/* Define if your compiler provides __uint128_t */
+#mesondefine HAVE_GCC_UINT128_T
+
+/* Define if you have the getaddrinfo function. */
+#mesondefine HAVE_GETADDRINFO
+
+/* Define this if you have flockfile(), getc_unlocked(), and funlockfile() */
+#mesondefine HAVE_GETC_UNLOCKED
+
+/* Define to 1 if you have the `getentropy' function. */
+#mesondefine HAVE_GETENTROPY
+
+/* Define to 1 if you have the `getgrouplist' function. */
+#mesondefine HAVE_GETGROUPLIST
+
+/* Define to 1 if you have the `getgroups' function. */
+#mesondefine HAVE_GETGROUPS
+
+/* Define to 1 if you have the `gethostbyname' function. */
+#mesondefine HAVE_GETHOSTBYNAME
+
+/* Define this if you have some version of gethostbyname_r() */
+#mesondefine HAVE_GETHOSTBYNAME_R
+
+/* Define this if you have the 3-arg version of gethostbyname_r(). */
+#mesondefine HAVE_GETHOSTBYNAME_R_3_ARG
+
+/* Define this if you have the 5-arg version of gethostbyname_r(). */
+#mesondefine HAVE_GETHOSTBYNAME_R_5_ARG
+
+/* Define this if you have the 6-arg version of gethostbyname_r(). */
+#mesondefine HAVE_GETHOSTBYNAME_R_6_ARG
+
+/* Define to 1 if you have the `getitimer' function. */
+#mesondefine HAVE_GETITIMER
+
+/* Define to 1 if you have the `getloadavg' function. */
+#mesondefine HAVE_GETLOADAVG
+
+/* Define to 1 if you have the `getlogin' function. */
+#mesondefine HAVE_GETLOGIN
+
+/* Define to 1 if you have the `getnameinfo' function. */
+#mesondefine HAVE_GETNAMEINFO
+
+/* Define if you have the 'getpagesize' function. */
+#mesondefine HAVE_GETPAGESIZE
+
+/* Define to 1 if you have the `getpeername' function. */
+#mesondefine HAVE_GETPEERNAME
+
+/* Define to 1 if you have the `getpgid' function. */
+#mesondefine HAVE_GETPGID
+
+/* Define to 1 if you have the `getpgrp' function. */
+#mesondefine HAVE_GETPGRP
+
+/* Define to 1 if you have the `getpid' function. */
+#mesondefine HAVE_GETPID
+
+/* Define to 1 if you have the `getpriority' function. */
+#mesondefine HAVE_GETPRIORITY
+
+/* Define to 1 if you have the `getpwent' function. */
+#mesondefine HAVE_GETPWENT
+
+/* Define to 1 if the getrandom() function is available */
+#mesondefine HAVE_GETRANDOM
+
+/* Define to 1 if the Linux getrandom() syscall is available */
+#mesondefine HAVE_GETRANDOM_SYSCALL
+
+/* Define to 1 if you have the `getresgid' function. */
+#mesondefine HAVE_GETRESGID
+
+/* Define to 1 if you have the `getresuid' function. */
+#mesondefine HAVE_GETRESUID
+
+/* Define to 1 if you have the `getsid' function. */
+#mesondefine HAVE_GETSID
+
+/* Define to 1 if you have the `getspent' function. */
+#mesondefine HAVE_GETSPENT
+
+/* Define to 1 if you have the `getspnam' function. */
+#mesondefine HAVE_GETSPNAM
+
+/* Define to 1 if you have the `gettimeofday' function. */
+#mesondefine HAVE_GETTIMEOFDAY
+
+/* Define to 1 if you have the `getwd' function. */
+#mesondefine HAVE_GETWD
+
+/* Define if glibc has incorrect _FORTIFY_SOURCE wrappers for memmove and
+   bcopy. */
+#mesondefine HAVE_GLIBC_MEMMOVE_BUG
+
+/* Define to 1 if you have the <grp.h> header file. */
+#mesondefine HAVE_GRP_H
+
+/* Define if you have the 'hstrerror' function. */
+#mesondefine HAVE_HSTRERROR
+
+/* Define this if you have le64toh() */
+#mesondefine HAVE_HTOLE64
+
+/* Define to 1 if you have the `hypot' function. */
+#mesondefine HAVE_HYPOT
+
+/* Define to 1 if you have the <ieeefp.h> header file. */
+#mesondefine HAVE_IEEEFP_H
+
+/* Define to 1 if you have the 'if_nameindex' function. */
+#mesondefine HAVE_IF_NAMEINDEX
+
+/* Define if you have the 'inet_aton' function. */
+#mesondefine HAVE_INET_ATON
+
+/* Define if you have the 'inet_pton' function. */
+#mesondefine HAVE_INET_PTON
+
+/* Define to 1 if you have the `initgroups' function. */
+#mesondefine HAVE_INITGROUPS
+
+/* Define to 1 if you have the <inttypes.h> header file. */
+#mesondefine HAVE_INTTYPES_H
+
+/* Define to 1 if you have the <io.h> header file. */
+#mesondefine HAVE_IO_H
+
+/* Define if gcc has the ipa-pure-const bug. */
+#mesondefine HAVE_IPA_PURE_CONST_BUG
+
+/* Define to 1 if you have the `kill' function. */
+#mesondefine HAVE_KILL
+
+/* Define to 1 if you have the `killpg' function. */
+#mesondefine HAVE_KILLPG
+
+/* Define if you have the 'kqueue' functions. */
+#mesondefine HAVE_KQUEUE
+
+/* Define to 1 if you have the <langinfo.h> header file. */
+#mesondefine HAVE_LANGINFO_H
+
+/* Defined to enable large file support when an off_t is bigger than a long
+   and long long is available and at least as big as an off_t. You may need to
+   add some flags for configuration and compilation to enable this mode. (For
+   Solaris and Linux, the necessary defines are already defined.) */
+#mesondefine HAVE_LARGEFILE_SUPPORT
+
+/* Define to 1 if you have the 'lchflags' function. */
+#mesondefine HAVE_LCHFLAGS
+
+/* Define to 1 if you have the `lchmod' function. */
+#mesondefine HAVE_LCHMOD
+
+/* Define to 1 if you have the `lchown' function. */
+#mesondefine HAVE_LCHOWN
+
+/* Define to 1 if you have the `lgamma' function. */
+#mesondefine HAVE_LGAMMA
+
+/* Define to 1 if you have the `dl' library (-ldl). */
+#mesondefine HAVE_LIBDL
+
+/* Define to 1 if you have the `dld' library (-ldld). */
+#mesondefine HAVE_LIBDLD
+
+/* Define to 1 if you have the `ieee' library (-lieee). */
+#mesondefine HAVE_LIBIEEE
+
+/* Define to 1 if you have the <libintl.h> header file. */
+#mesondefine HAVE_LIBINTL_H
+
+/* Define if you have the readline library (-lreadline). */
+#mesondefine HAVE_LIBREADLINE
+
+/* Define to 1 if you have the `resolv' library (-lresolv). */
+#mesondefine HAVE_LIBRESOLV
+
+/* Define to 1 if you have the `sendfile' library (-lsendfile). */
+#mesondefine HAVE_LIBSENDFILE
+
+/* Define to 1 if you have the <libutil.h> header file. */
+#mesondefine HAVE_LIBUTIL_H
+
+/* Define if you have the 'link' function. */
+#mesondefine HAVE_LINK
+
+/* Define to 1 if you have the `linkat' function. */
+#mesondefine HAVE_LINKAT
+
+/* Define to 1 if you have the <linux/can/bcm.h> header file. */
+#mesondefine HAVE_LINUX_CAN_BCM_H
+
+/* Define to 1 if you have the <linux/can.h> header file. */
+#mesondefine HAVE_LINUX_CAN_H
+
+/* Define if compiling using Linux 3.6 or later. */
+#mesondefine HAVE_LINUX_CAN_RAW_FD_FRAMES
+
+/* Define to 1 if you have the <linux/can/raw.h> header file. */
+#mesondefine HAVE_LINUX_CAN_RAW_H
+
+/* Define to 1 if you have the <linux/netlink.h> header file. */
+#mesondefine HAVE_LINUX_NETLINK_H
+
+/* Define to 1 if you have the <linux/random.h> header file. */
+#mesondefine HAVE_LINUX_RANDOM_H
+
+/* Define to 1 if you have the <linux/tipc.h> header file. */
+#mesondefine HAVE_LINUX_TIPC_H
+
+/* Define to 1 if you have the 'lockf' function and the F_LOCK macro. */
+#mesondefine HAVE_LOCKF
+
+/* Define to 1 if you have the `log1p' function. */
+#mesondefine HAVE_LOG1P
+
+/* Define to 1 if you have the `log2' function. */
+#mesondefine HAVE_LOG2
+
+/* Define this if you have the type long double. */
+#mesondefine HAVE_LONG_DOUBLE
+
+/* Define to 1 if you have the `lstat' function. */
+#mesondefine HAVE_LSTAT
+
+/* Define to 1 if you have the `lutimes' function. */
+#mesondefine HAVE_LUTIMES
+
+/* Define this if you have the makedev macro. */
+#mesondefine HAVE_MAKEDEV
+
+/* Define to 1 if you have the `mbrtowc' function. */
+#mesondefine HAVE_MBRTOWC
+
+/* Define to 1 if you have the `memmove' function. */
+#mesondefine HAVE_MEMMOVE
+
+/* Define to 1 if you have the <memory.h> header file. */
+#mesondefine HAVE_MEMORY_H
+
+/* Define to 1 if you have the `memrchr' function. */
+#mesondefine HAVE_MEMRCHR
+
+/* Define to 1 if you have the `mkdirat' function. */
+#mesondefine HAVE_MKDIRAT
+
+/* Define to 1 if you have the `mkfifo' function. */
+#mesondefine HAVE_MKFIFO
+
+/* Define to 1 if you have the `mkfifoat' function. */
+#mesondefine HAVE_MKFIFOAT
+
+/* Define to 1 if you have the `mknod' function. */
+#mesondefine HAVE_MKNOD
+
+/* Define to 1 if you have the `mknodat' function. */
+#mesondefine HAVE_MKNODAT
+
+/* Define to 1 if you have the `mktime' function. */
+#mesondefine HAVE_MKTIME
+
+/* Define to 1 if you have the `mmap' function. */
+#mesondefine HAVE_MMAP
+
+/* Define to 1 if you have the `mremap' function. */
+#mesondefine HAVE_MREMAP
+
+/* Define to 1 if you have the <ncurses.h> header file. */
+#mesondefine HAVE_NCURSES_H
+
+/* Define to 1 if you have the <ndir.h> header file, and it defines `DIR'. */
+#mesondefine HAVE_NDIR_H
+
+/* Define to 1 if you have the <netpacket/packet.h> header file. */
+#mesondefine HAVE_NETPACKET_PACKET_H
+
+/* Define to 1 if you have the <net/if.h> header file. */
+#mesondefine HAVE_NET_IF_H
+
+/* Define to 1 if you have the `nice' function. */
+#mesondefine HAVE_NICE
+
+/* Define to 1 if you have the `openat' function. */
+#mesondefine HAVE_OPENAT
+
+/* Define to 1 if you have the `openpty' function. */
+#mesondefine HAVE_OPENPTY
+
+/* Define to 1 if you have the `pathconf' function. */
+#mesondefine HAVE_PATHCONF
+
+/* Define to 1 if you have the `pause' function. */
+#mesondefine HAVE_PAUSE
+
+/* Define to 1 if you have the `pipe2' function. */
+#mesondefine HAVE_PIPE2
+
+/* Define to 1 if you have the `plock' function. */
+#mesondefine HAVE_PLOCK
+
+/* Define to 1 if you have the `poll' function. */
+#mesondefine HAVE_POLL
+
+/* Define to 1 if you have the <poll.h> header file. */
+#mesondefine HAVE_POLL_H
+
+/* Define to 1 if you have the `posix_fadvise' function. */
+#mesondefine HAVE_POSIX_FADVISE
+
+/* Define to 1 if you have the `posix_fallocate' function. */
+#mesondefine HAVE_POSIX_FALLOCATE
+
+/* Define to 1 if you have the `pread' function. */
+#mesondefine HAVE_PREAD
+
+/* Define if you have the 'prlimit' functions. */
+#mesondefine HAVE_PRLIMIT
+
+/* Define to 1 if you have the <process.h> header file. */
+#mesondefine HAVE_PROCESS_H
+
+/* Define if your compiler supports function prototype */
+#mesondefine HAVE_PROTOTYPES
+
+/* Define to 1 if you have the `pthread_atfork' function. */
+#mesondefine HAVE_PTHREAD_ATFORK
+
+/* Defined for Solaris 2.6 bug in pthread header. */
+#mesondefine HAVE_PTHREAD_DESTRUCTOR
+
+/* Define to 1 if you have the <pthread.h> header file. */
+#mesondefine HAVE_PTHREAD_H
+
+/* Define to 1 if you have the `pthread_init' function. */
+#mesondefine HAVE_PTHREAD_INIT
+
+/* Define to 1 if you have the `pthread_kill' function. */
+#mesondefine HAVE_PTHREAD_KILL
+
+/* Define to 1 if you have the `pthread_sigmask' function. */
+#mesondefine HAVE_PTHREAD_SIGMASK
+
+/* Define to 1 if you have the <pty.h> header file. */
+#mesondefine HAVE_PTY_H
+
+/* Define to 1 if you have the `putenv' function. */
+#mesondefine HAVE_PUTENV
+
+/* Define to 1 if you have the `pwrite' function. */
+#mesondefine HAVE_PWRITE
+
+/* Define to 1 if you have the `readlink' function. */
+#mesondefine HAVE_READLINK
+
+/* Define to 1 if you have the `readlinkat' function. */
+#mesondefine HAVE_READLINKAT
+
+/* Define to 1 if you have the `readv' function. */
+#mesondefine HAVE_READV
+
+/* Define to 1 if you have the `realpath' function. */
+#mesondefine HAVE_REALPATH
+
+/* Define to 1 if you have the `renameat' function. */
+#mesondefine HAVE_RENAMEAT
+
+/* Define if readline supports append_history */
+#mesondefine HAVE_RL_APPEND_HISTORY
+
+/* Define if you have readline 2.1 */
+#mesondefine HAVE_RL_CALLBACK
+
+/* Define if you can turn off readline's signal handling. */
+#mesondefine HAVE_RL_CATCH_SIGNAL
+
+/* Define if you have readline 2.2 */
+#mesondefine HAVE_RL_COMPLETION_APPEND_CHARACTER
+
+/* Define if you have readline 4.0 */
+#mesondefine HAVE_RL_COMPLETION_DISPLAY_MATCHES_HOOK
+
+/* Define if you have readline 4.2 */
+#mesondefine HAVE_RL_COMPLETION_MATCHES
+
+/* Define if you have rl_completion_suppress_append */
+#mesondefine HAVE_RL_COMPLETION_SUPPRESS_APPEND
+
+/* Define if you have readline 4.0 */
+#mesondefine HAVE_RL_PRE_INPUT_HOOK
+
+/* Define if you have readline 4.0 */
+#mesondefine HAVE_RL_RESIZE_TERMINAL
+
+/* Define to 1 if you have the `round' function. */
+#mesondefine HAVE_ROUND
+
+/* Define to 1 if you have the `sched_get_priority_max' function. */
+#mesondefine HAVE_SCHED_GET_PRIORITY_MAX
+
+/* Define to 1 if you have the <sched.h> header file. */
+#mesondefine HAVE_SCHED_H
+
+/* Define to 1 if you have the `sched_rr_get_interval' function. */
+#mesondefine HAVE_SCHED_RR_GET_INTERVAL
+
+/* Define to 1 if you have the `sched_setaffinity' function. */
+#mesondefine HAVE_SCHED_SETAFFINITY
+
+/* Define to 1 if you have the `sched_setparam' function. */
+#mesondefine HAVE_SCHED_SETPARAM
+
+/* Define to 1 if you have the `sched_setscheduler' function. */
+#mesondefine HAVE_SCHED_SETSCHEDULER
+
+/* Define to 1 if you have the `select' function. */
+#mesondefine HAVE_SELECT
+
+/* Define to 1 if you have the `sem_getvalue' function. */
+#mesondefine HAVE_SEM_GETVALUE
+
+/* Define to 1 if you have the `sem_open' function. */
+#mesondefine HAVE_SEM_OPEN
+
+/* Define to 1 if you have the `sem_timedwait' function. */
+#mesondefine HAVE_SEM_TIMEDWAIT
+
+/* Define to 1 if you have the `sem_unlink' function. */
+#mesondefine HAVE_SEM_UNLINK
+
+/* Define to 1 if you have the `sendfile' function. */
+#mesondefine HAVE_SENDFILE
+
+/* Define to 1 if you have the `setegid' function. */
+#mesondefine HAVE_SETEGID
+
+/* Define to 1 if you have the `seteuid' function. */
+#mesondefine HAVE_SETEUID
+
+/* Define to 1 if you have the `setgid' function. */
+#mesondefine HAVE_SETGID
+
+/* Define if you have the 'setgroups' function. */
+#mesondefine HAVE_SETGROUPS
+
+/* Define to 1 if you have the `sethostname' function. */
+#mesondefine HAVE_SETHOSTNAME
+
+/* Define to 1 if you have the `setitimer' function. */
+#mesondefine HAVE_SETITIMER
+
+/* Define to 1 if you have the `setlocale' function. */
+#mesondefine HAVE_SETLOCALE
+
+/* Define to 1 if you have the `setpgid' function. */
+#mesondefine HAVE_SETPGID
+
+/* Define to 1 if you have the `setpgrp' function. */
+#mesondefine HAVE_SETPGRP
+
+/* Define to 1 if you have the `setpriority' function. */
+#mesondefine HAVE_SETPRIORITY
+
+/* Define to 1 if you have the `setregid' function. */
+#mesondefine HAVE_SETREGID
+
+/* Define to 1 if you have the `setresgid' function. */
+#mesondefine HAVE_SETRESGID
+
+/* Define to 1 if you have the `setresuid' function. */
+#mesondefine HAVE_SETRESUID
+
+/* Define to 1 if you have the `setreuid' function. */
+#mesondefine HAVE_SETREUID
+
+/* Define to 1 if you have the `setsid' function. */
+#mesondefine HAVE_SETSID
+
+/* Define to 1 if you have the `setuid' function. */
+#mesondefine HAVE_SETUID
+
+/* Define to 1 if you have the `setvbuf' function. */
+#mesondefine HAVE_SETVBUF
+
+/* Define to 1 if you have the <shadow.h> header file. */
+#mesondefine HAVE_SHADOW_H
+
+/* Define to 1 if you have the `sigaction' function. */
+#mesondefine HAVE_SIGACTION
+
+/* Define to 1 if you have the `sigaltstack' function. */
+#mesondefine HAVE_SIGALTSTACK
+
+/* Define to 1 if `si_band' is a member of `siginfo_t'. */
+#mesondefine HAVE_SIGINFO_T_SI_BAND
+
+/* Define to 1 if you have the `siginterrupt' function. */
+#mesondefine HAVE_SIGINTERRUPT
+
+/* Define to 1 if you have the <signal.h> header file. */
+#mesondefine HAVE_SIGNAL_H
+
+/* Define to 1 if you have the `sigpending' function. */
+#mesondefine HAVE_SIGPENDING
+
+/* Define to 1 if you have the `sigrelse' function. */
+#mesondefine HAVE_SIGRELSE
+
+/* Define to 1 if you have the `sigtimedwait' function. */
+#mesondefine HAVE_SIGTIMEDWAIT
+
+/* Define to 1 if you have the `sigwait' function. */
+#mesondefine HAVE_SIGWAIT
+
+/* Define to 1 if you have the `sigwaitinfo' function. */
+#mesondefine HAVE_SIGWAITINFO
+
+/* Define to 1 if you have the `snprintf' function. */
+#mesondefine HAVE_SNPRINTF
+
+/* struct sockaddr_alg (linux/if_alg.h) */
+#mesondefine HAVE_SOCKADDR_ALG
+
+/* Define if sockaddr has sa_len member */
+#mesondefine HAVE_SOCKADDR_SA_LEN
+
+/* struct sockaddr_storage (sys/socket.h) */
+#mesondefine HAVE_SOCKADDR_STORAGE
+
+/* Define if you have the 'socketpair' function. */
+#mesondefine HAVE_SOCKETPAIR
+
+/* Define to 1 if you have the <spawn.h> header file. */
+#mesondefine HAVE_SPAWN_H
+
+/* Define if your compiler provides ssize_t */
+#mesondefine HAVE_SSIZE_T
+
+/* Define to 1 if you have the `statvfs' function. */
+#mesondefine HAVE_STATVFS
+
+/* Define if you have struct stat.st_mtim.tv_nsec */
+#mesondefine HAVE_STAT_TV_NSEC
+
+/* Define if you have struct stat.st_mtimensec */
+#mesondefine HAVE_STAT_TV_NSEC2
+
+/* Define if your compiler supports variable length function prototypes (e.g.
+   void fprintf(FILE *, char *, ...);) *and* <stdarg.h> */
+#mesondefine HAVE_STDARG_PROTOTYPES
+
+/* Define to 1 if you have the <stdint.h> header file. */
+#mesondefine HAVE_STDINT_H
+
+/* Define to 1 if you have the <stdlib.h> header file. */
+#mesondefine HAVE_STDLIB_H
+
+/* Has stdatomic.h, atomic_int and _Atomic void* types work */
+#mesondefine HAVE_STD_ATOMIC
+
+/* Define to 1 if you have the `strdup' function. */
+#mesondefine HAVE_STRDUP
+
+/* Define to 1 if you have the `strftime' function. */
+#mesondefine HAVE_STRFTIME
+
+/* Define to 1 if you have the <strings.h> header file. */
+#mesondefine HAVE_STRINGS_H
+
+/* Define to 1 if you have the <string.h> header file. */
+#mesondefine HAVE_STRING_H
+
+/* Define to 1 if you have the `strlcpy' function. */
+#mesondefine HAVE_STRLCPY
+
+/* Define to 1 if you have the <stropts.h> header file. */
+#mesondefine HAVE_STROPTS_H
+
+/* Define to 1 if `pw_gecos' is a member of `struct passwd'. */
+#mesondefine HAVE_STRUCT_PASSWD_PW_GECOS
+
+/* Define to 1 if `pw_passwd' is a member of `struct passwd'. */
+#mesondefine HAVE_STRUCT_PASSWD_PW_PASSWD
+
+/* Define to 1 if `st_birthtime' is a member of `struct stat'. */
+#mesondefine HAVE_STRUCT_STAT_ST_BIRTHTIME
+
+/* Define to 1 if `st_blksize' is a member of `struct stat'. */
+#mesondefine HAVE_STRUCT_STAT_ST_BLKSIZE
+
+/* Define to 1 if `st_blocks' is a member of `struct stat'. */
+#mesondefine HAVE_STRUCT_STAT_ST_BLOCKS
+
+/* Define to 1 if `st_flags' is a member of `struct stat'. */
+#mesondefine HAVE_STRUCT_STAT_ST_FLAGS
+
+/* Define to 1 if `st_gen' is a member of `struct stat'. */
+#mesondefine HAVE_STRUCT_STAT_ST_GEN
+
+/* Define to 1 if `st_rdev' is a member of `struct stat'. */
+#mesondefine HAVE_STRUCT_STAT_ST_RDEV
+
+/* Define to 1 if `tm_zone' is a member of `struct tm'. */
+#mesondefine HAVE_STRUCT_TM_TM_ZONE
+
+/* Define if you have the 'symlink' function. */
+#mesondefine HAVE_SYMLINK
+
+/* Define to 1 if you have the `symlinkat' function. */
+#mesondefine HAVE_SYMLINKAT
+
+/* Define to 1 if you have the `sync' function. */
+#mesondefine HAVE_SYNC
+
+/* Define to 1 if you have the `sysconf' function. */
+#mesondefine HAVE_SYSCONF
+
+/* Define to 1 if you have the <sysexits.h> header file. */
+#mesondefine HAVE_SYSEXITS_H
+
+/* Define to 1 if you have the <sys/audioio.h> header file. */
+#mesondefine HAVE_SYS_AUDIOIO_H
+
+/* Define to 1 if you have the <sys/bsdtty.h> header file. */
+#mesondefine HAVE_SYS_BSDTTY_H
+
+/* Define to 1 if you have the <sys/devpoll.h> header file. */
+#mesondefine HAVE_SYS_DEVPOLL_H
+
+/* Define to 1 if you have the <sys/dir.h> header file, and it defines `DIR'.
+   */
+#mesondefine HAVE_SYS_DIR_H
+
+/* Define to 1 if you have the <sys/endian.h> header file. */
+#mesondefine HAVE_SYS_ENDIAN_H
+
+/* Define to 1 if you have the <sys/epoll.h> header file. */
+#mesondefine HAVE_SYS_EPOLL_H
+
+/* Define to 1 if you have the <sys/event.h> header file. */
+#mesondefine HAVE_SYS_EVENT_H
+
+/* Define to 1 if you have the <sys/file.h> header file. */
+#mesondefine HAVE_SYS_FILE_H
+
+/* Define to 1 if you have the <sys/ioctl.h> header file. */
+#mesondefine HAVE_SYS_IOCTL_H
+
+/* Define to 1 if you have the <sys/kern_control.h> header file. */
+#mesondefine HAVE_SYS_KERN_CONTROL_H
+
+/* Define to 1 if you have the <sys/loadavg.h> header file. */
+#mesondefine HAVE_SYS_LOADAVG_H
+
+/* Define to 1 if you have the <sys/lock.h> header file. */
+#mesondefine HAVE_SYS_LOCK_H
+
+/* Define to 1 if you have the <sys/mkdev.h> header file. */
+#mesondefine HAVE_SYS_MKDEV_H
+
+/* Define to 1 if you have the <sys/modem.h> header file. */
+#mesondefine HAVE_SYS_MODEM_H
+
+/* Define to 1 if you have the <sys/ndir.h> header file, and it defines `DIR'.
+   */
+#mesondefine HAVE_SYS_NDIR_H
+
+/* Define to 1 if you have the <sys/param.h> header file. */
+#mesondefine HAVE_SYS_PARAM_H
+
+/* Define to 1 if you have the <sys/poll.h> header file. */
+#mesondefine HAVE_SYS_POLL_H
+
+/* Define to 1 if you have the <sys/random.h> header file. */
+#mesondefine HAVE_SYS_RANDOM_H
+
+/* Define to 1 if you have the <sys/resource.h> header file. */
+#mesondefine HAVE_SYS_RESOURCE_H
+
+/* Define to 1 if you have the <sys/select.h> header file. */
+#mesondefine HAVE_SYS_SELECT_H
+
+/* Define to 1 if you have the <sys/sendfile.h> header file. */
+#mesondefine HAVE_SYS_SENDFILE_H
+
+/* Define to 1 if you have the <sys/socket.h> header file. */
+#mesondefine HAVE_SYS_SOCKET_H
+
+/* Define to 1 if you have the <sys/statvfs.h> header file. */
+#mesondefine HAVE_SYS_STATVFS_H
+
+/* Define to 1 if you have the <sys/stat.h> header file. */
+#mesondefine HAVE_SYS_STAT_H
+
+/* Define to 1 if you have the <sys/syscall.h> header file. */
+#mesondefine HAVE_SYS_SYSCALL_H
+
+/* Define to 1 if you have the <sys/sys_domain.h> header file. */
+#mesondefine HAVE_SYS_SYS_DOMAIN_H
+
+/* Define to 1 if you have the <sys/termio.h> header file. */
+#mesondefine HAVE_SYS_TERMIO_H
+
+/* Define to 1 if you have the <sys/times.h> header file. */
+#mesondefine HAVE_SYS_TIMES_H
+
+/* Define to 1 if you have the <sys/time.h> header file. */
+#mesondefine HAVE_SYS_TIME_H
+
+/* Define to 1 if you have the <sys/types.h> header file. */
+#mesondefine HAVE_SYS_TYPES_H
+
+/* Define to 1 if you have the <sys/uio.h> header file. */
+#mesondefine HAVE_SYS_UIO_H
+
+/* Define to 1 if you have the <sys/un.h> header file. */
+#mesondefine HAVE_SYS_UN_H
+
+/* Define to 1 if you have the <sys/utsname.h> header file. */
+#mesondefine HAVE_SYS_UTSNAME_H
+
+/* Define to 1 if you have the <sys/wait.h> header file. */
+#mesondefine HAVE_SYS_WAIT_H
+
+/* Define to 1 if you have the <sys/xattr.h> header file. */
+#mesondefine HAVE_SYS_XATTR_H
+
+/* Define to 1 if you have the `tcgetpgrp' function. */
+#mesondefine HAVE_TCGETPGRP
+
+/* Define to 1 if you have the `tcsetpgrp' function. */
+#mesondefine HAVE_TCSETPGRP
+
+/* Define to 1 if you have the `tempnam' function. */
+#mesondefine HAVE_TEMPNAM
+
+/* Define to 1 if you have the <termios.h> header file. */
+#mesondefine HAVE_TERMIOS_H
+
+/* Define to 1 if you have the <term.h> header file. */
+#mesondefine HAVE_TERM_H
+
+/* Define to 1 if you have the `tgamma' function. */
+#mesondefine HAVE_TGAMMA
+
+/* Define to 1 if you have the `timegm' function. */
+#mesondefine HAVE_TIMEGM
+
+/* Define to 1 if you have the `times' function. */
+#mesondefine HAVE_TIMES
+
+/* Define to 1 if you have the `tmpfile' function. */
+#mesondefine HAVE_TMPFILE
+
+/* Define to 1 if you have the `tmpnam' function. */
+#mesondefine HAVE_TMPNAM
+
+/* Define to 1 if you have the `tmpnam_r' function. */
+#mesondefine HAVE_TMPNAM_R
+
+/* Define to 1 if your `struct tm' has `tm_zone'. Deprecated, use
+   `HAVE_STRUCT_TM_TM_ZONE' instead. */
+#mesondefine HAVE_TM_ZONE
+
+/* Define to 1 if you have the `truncate' function. */
+#mesondefine HAVE_TRUNCATE
+
+/* Define to 1 if you don't have `tm_zone' but do have the external array
+   `tzname'. */
+#mesondefine HAVE_TZNAME
+
+/* Define this if you have tcl and TCL_UTF_MAX==6 */
+#mesondefine HAVE_UCS4_TCL
+
+/* Define to 1 if you have the `uname' function. */
+#mesondefine HAVE_UNAME
+
+/* Define to 1 if you have the <unistd.h> header file. */
+#mesondefine HAVE_UNISTD_H
+
+/* Define to 1 if you have the `unlinkat' function. */
+#mesondefine HAVE_UNLINKAT
+
+/* Define to 1 if you have the `unsetenv' function. */
+#mesondefine HAVE_UNSETENV
+
+/* Define if you have a useable wchar_t type defined in wchar.h; useable means
+   wchar_t must be an unsigned type with at least 16 bits. (see
+   Include/unicodeobject.h). */
+#mesondefine HAVE_USABLE_WCHAR_T
+
+/* Define to 1 if you have the <util.h> header file. */
+#mesondefine HAVE_UTIL_H
+
+/* Define to 1 if you have the `utimensat' function. */
+#mesondefine HAVE_UTIMENSAT
+
+/* Define to 1 if you have the `utimes' function. */
+#mesondefine HAVE_UTIMES
+
+/* Define to 1 if you have the <utime.h> header file. */
+#mesondefine HAVE_UTIME_H
+
+/* Define to 1 if you have the `wait3' function. */
+#mesondefine HAVE_WAIT3
+
+/* Define to 1 if you have the `wait4' function. */
+#mesondefine HAVE_WAIT4
+
+/* Define to 1 if you have the `waitid' function. */
+#mesondefine HAVE_WAITID
+
+/* Define to 1 if you have the `waitpid' function. */
+#mesondefine HAVE_WAITPID
+
+/* Define if the compiler provides a wchar.h header file. */
+#mesondefine HAVE_WCHAR_H
+
+/* Define to 1 if you have the `wcscoll' function. */
+#mesondefine HAVE_WCSCOLL
+
+/* Define to 1 if you have the `wcsftime' function. */
+#mesondefine HAVE_WCSFTIME
+
+/* Define to 1 if you have the `wcsxfrm' function. */
+#mesondefine HAVE_WCSXFRM
+
+/* Define to 1 if you have the `wmemcmp' function. */
+#mesondefine HAVE_WMEMCMP
+
+/* Define if tzset() actually switches the local timezone in a meaningful way.
+   */
+#mesondefine HAVE_WORKING_TZSET
+
+/* Define to 1 if you have the `writev' function. */
+#mesondefine HAVE_WRITEV
+
+/* Define if the zlib library has inflateCopy */
+#mesondefine HAVE_ZLIB_COPY
+
+/* Define to 1 if you have the `_getpty' function. */
+#mesondefine HAVE__GETPTY
+
+/* Define if log1p(-0.) is 0. rather than -0. */
+#mesondefine LOG1P_DROPS_ZERO_SIGN
+
+/* Define to 1 if `major', `minor', and `makedev' are declared in <mkdev.h>.
+   */
+#mesondefine MAJOR_IN_MKDEV
+
+/* Define to 1 if `major', `minor', and `makedev' are declared in
+   <sysmacros.h>. */
+#mesondefine MAJOR_IN_SYSMACROS
+
+/* Define if mvwdelch in curses.h is an expression. */
+#mesondefine MVWDELCH_IS_EXPRESSION
+
+/* Define to the address where bug reports for this package should be sent. */
+#mesondefine PACKAGE_BUGREPORT
+
+/* Define to the full name of this package. */
+#mesondefine PACKAGE_NAME
+
+/* Define to the full name and version of this package. */
+#mesondefine PACKAGE_STRING
+
+/* Define to the one symbol short name of this package. */
+#mesondefine PACKAGE_TARNAME
+
+/* Define to the home page for this package. */
+#mesondefine PACKAGE_URL
+
+/* Define to the version of this package. */
+#mesondefine PACKAGE_VERSION
+
+/* Define if POSIX semaphores aren't enabled on your system */
+#mesondefine POSIX_SEMAPHORES_NOT_ENABLED
+
+/* Defined if PTHREAD_SCOPE_SYSTEM supported. */
+#mesondefine PTHREAD_SYSTEM_SCHED_SUPPORTED
+
+/* Define as the preferred size in bits of long digits */
+#mesondefine PYLONG_BITS_IN_DIGIT
+
+/* Define to printf format modifier for Py_ssize_t */
+#mesondefine PY_FORMAT_SIZE_T
+
+/* Define if you want to build an interpreter with many run-time checks. */
+#mesondefine Py_DEBUG
+
+/* Defined if Python is built as a shared library. */
+#mesondefine Py_ENABLE_SHARED
+
+/* Define hash algorithm for str, bytes and memoryview. SipHash24: 1, FNV: 2,
+   externally defined: 0 */
+#mesondefine Py_HASH_ALGORITHM
+
+/* assume C89 semantics that RETSIGTYPE is always void */
+#mesondefine RETSIGTYPE
+
+/* Define if setpgrp() must be called as setpgrp(0, 0). */
+#mesondefine SETPGRP_HAVE_ARG
+
+/* Define if i>>j for signed int i does not extend the sign bit when i < 0 */
+#mesondefine SIGNED_RIGHT_SHIFT_ZERO_FILLS
+
+/* The size of `double', as computed by sizeof. */
+#mesondefine SIZEOF_DOUBLE
+
+/* The size of `float', as computed by sizeof. */
+#mesondefine SIZEOF_FLOAT
+
+/* The size of `fpos_t', as computed by sizeof. */
+#mesondefine SIZEOF_FPOS_T
+
+/* The size of `int', as computed by sizeof. */
+#mesondefine SIZEOF_INT
+
+/* The size of `long', as computed by sizeof. */
+#mesondefine SIZEOF_LONG
+
+/* The size of `long double', as computed by sizeof. */
+#mesondefine SIZEOF_LONG_DOUBLE
+
+/* The size of `long long', as computed by sizeof. */
+#mesondefine SIZEOF_LONG_LONG
+
+/* The size of `off_t', as computed by sizeof. */
+#mesondefine SIZEOF_OFF_T
+
+/* The size of `pid_t', as computed by sizeof. */
+#mesondefine SIZEOF_PID_T
+
+/* The size of `pthread_t', as computed by sizeof. */
+#mesondefine SIZEOF_PTHREAD_T
+
+/* The size of `short', as computed by sizeof. */
+#mesondefine SIZEOF_SHORT
+
+/* The size of `size_t', as computed by sizeof. */
+#mesondefine SIZEOF_SIZE_T
+
+/* The size of `time_t', as computed by sizeof. */
+#mesondefine SIZEOF_TIME_T
+
+/* The size of `uintptr_t', as computed by sizeof. */
+#mesondefine SIZEOF_UINTPTR_T
+
+/* The size of `void *', as computed by sizeof. */
+#mesondefine SIZEOF_VOID_P
+
+/* The size of `wchar_t', as computed by sizeof. */
+#mesondefine SIZEOF_WCHAR_T
+
+/* The size of `_Bool', as computed by sizeof. */
+#mesondefine SIZEOF__BOOL
+
+/* Define to 1 if you have the ANSI C header files. */
+#mesondefine STDC_HEADERS
+
+/* Define if you can safely include both <sys/select.h> and <sys/time.h>
+   (which you can't on SCO ODT 3.0). */
+#mesondefine SYS_SELECT_WITH_SYS_TIME
+
+/* Define if tanh(-0.) is -0., or if platform doesn't have signed zeros */
+#mesondefine TANH_PRESERVES_ZERO_SIGN
+
+/* Library needed by timemodule.c: librt may be needed for clock_gettime() */
+#mesondefine TIMEMODULE_LIB
+
+/* Define to 1 if you can safely include both <sys/time.h> and <time.h>. */
+#mesondefine TIME_WITH_SYS_TIME
+
+/* Define to 1 if your <sys/time.h> declares `struct tm'. */
+#mesondefine TM_IN_SYS_TIME
+
+/* Define if you want to use computed gotos in ceval.c. */
+#mesondefine USE_COMPUTED_GOTOS
+
+/* Enable extensions on AIX 3, Interix.  */
+#ifndef _ALL_SOURCE
+# undef _ALL_SOURCE
+#endif
+/* Enable GNU extensions on systems that have them.  */
+#ifndef _GNU_SOURCE
+# undef _GNU_SOURCE
+#endif
+/* Enable threading extensions on Solaris.  */
+#ifndef _POSIX_PTHREAD_SEMANTICS
+# undef _POSIX_PTHREAD_SEMANTICS
+#endif
+/* Enable extensions on HP NonStop.  */
+#ifndef _TANDEM_SOURCE
+# undef _TANDEM_SOURCE
+#endif
+/* Enable general extensions on Solaris.  */
+#ifndef __EXTENSIONS__
+# undef __EXTENSIONS__
+#endif
+
+
+/* Define if you want SIGFPE handled (see Include/pyfpe.h). */
+#mesondefine WANT_SIGFPE_HANDLER
+
+/* Define if WINDOW in curses.h offers a field _flags. */
+#mesondefine WINDOW_HAS_FLAGS
+
+/* Define if you want documentation strings in extension modules */
+#mesondefine WITH_DOC_STRINGS
+
+/* Define if you want to compile in DTrace support */
+#mesondefine WITH_DTRACE
+
+/* Define if you want to use the new-style (Openstep, Rhapsody, MacOS) dynamic
+   linker (dyld) instead of the old-style (NextStep) dynamic linker (rld).
+   Dyld is necessary to support frameworks. */
+#mesondefine WITH_DYLD
+
+/* Define to 1 if libintl is needed for locale functions. */
+#mesondefine WITH_LIBINTL
+
+/* Define if you want to produce an OpenStep/Rhapsody framework (shared
+   library plus accessory files). */
+#mesondefine WITH_NEXT_FRAMEWORK
+
+/* Define if you want to compile in Python-specific mallocs */
+#mesondefine WITH_PYMALLOC
+
+/* Define if you want to compile in rudimentary thread support */
+#mesondefine WITH_THREAD
+
+/* Define if you want pymalloc to be disabled when running under valgrind */
+#mesondefine WITH_VALGRIND
+
+/* Define WORDS_BIGENDIAN to 1 if your processor stores words with the most
+   significant byte first (like Motorola and SPARC, unlike Intel). */
+#if defined AC_APPLE_UNIVERSAL_BUILD
+# if defined __BIG_ENDIAN__
+#  define WORDS_BIGENDIAN 1
+# endif
+#else
+# ifndef WORDS_BIGENDIAN
+#  undef WORDS_BIGENDIAN
+# endif
+#endif
+
+/* Define if arithmetic is subject to x87-style double rounding issue */
+#mesondefine X87_DOUBLE_ROUNDING
+
+/* Define on OpenBSD to activate all library features */
+#mesondefine _BSD_SOURCE
+
+/* Define on Irix to enable u_int */
+#mesondefine _BSD_TYPES
+
+/* Define on Darwin to activate all library features */
+#mesondefine _DARWIN_C_SOURCE
+
+/* This must be set to 64 on some systems to enable large file support. */
+#mesondefine _FILE_OFFSET_BITS
+
+/* Define on Linux to activate all library features */
+#mesondefine _GNU_SOURCE
+
+/* Define to include mbstate_t for mbrtowc */
+#mesondefine _INCLUDE__STDC_A1_SOURCE
+
+/* This must be defined on some systems to enable large file support. */
+#mesondefine _LARGEFILE_SOURCE
+
+/* This must be defined on AIX systems to enable large file support. */
+#mesondefine _LARGE_FILES
+
+/* Define to 1 if on MINIX. */
+#mesondefine _MINIX
+
+/* Define on NetBSD to activate all library features */
+#mesondefine _NETBSD_SOURCE
+
+/* Define to 2 if the system does not provide POSIX.1 features except with
+   this defined. */
+#mesondefine _POSIX_1_SOURCE
+
+/* Define to activate features from IEEE Stds 1003.1-2008 */
+#mesondefine _POSIX_C_SOURCE
+
+/* Define to 1 if you need to in order for `stat' and other things to work. */
+#mesondefine _POSIX_SOURCE
+
+/* Define if you have POSIX threads, and your system does not define that. */
+#mesondefine _POSIX_THREADS
+
+/* Define to force use of thread-safe errno, h_errno, and other functions */
+#mesondefine _REENTRANT
+
+/* Define to the level of X/Open that your system supports */
+#mesondefine _XOPEN_SOURCE
+
+/* Define to activate Unix95-and-earlier features */
+#mesondefine _XOPEN_SOURCE_EXTENDED
+
+/* Define on FreeBSD to activate all library features */
+#mesondefine __BSD_VISIBLE
+
+/* Define to 1 if type `char' is unsigned and you are not using gcc.  */
+#ifndef __CHAR_UNSIGNED__
+# undef __CHAR_UNSIGNED__
+#endif
+
+/* Define to 'long' if <time.h> doesn't define. */
+#mesondefine clock_t
+
+/* Define to empty if `const' does not conform to ANSI C. */
+#mesondefine const
+
+/* Define to `int' if <sys/types.h> doesn't define. */
+#mesondefine gid_t
+
+/* Define to `int' if <sys/types.h> does not define. */
+#mesondefine mode_t
+
+/* Define to `long int' if <sys/types.h> does not define. */
+#mesondefine off_t
+
+/* Define to `int' if <sys/types.h> does not define. */
+#mesondefine pid_t
+
+/* Define to empty if the keyword does not work. */
+#mesondefine signed
+
+/* Define to `unsigned int' if <sys/types.h> does not define. */
+#mesondefine size_t
+
+/* Define to `int' if <sys/socket.h> does not define. */
+#mesondefine socklen_t
+
+/* Define to `int' if <sys/types.h> doesn't define. */
+#mesondefine uid_t
+
+/* Define to empty if the keyword does not work. */
+#mesondefine volatile
+
+
+/* Define the macros needed if on a UnixWare 7.x system. */
+#if defined(__USLC__) && defined(__SCO_VERSION__)
+#define STRICT_SYSV_CURSES /* Don't use ncurses extensions */
+#endif
+
+#endif /*Py_PYCONFIG_H*/
+
