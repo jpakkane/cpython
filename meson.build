@@ -153,7 +153,7 @@ check_functions = [
   ['HAVE_DIRFD', 'dirfd', '#include<dirent.h>'],
 #  ['HAVE_DLOPEN', 'dlopen', '#include<dlfcn.h>'],
   ['HAVE_DUP2', 'dup2', '#include<unistd.h>'],
-  ['HAVE_DUP3', 'dup2', '#include<unistd.h>'],
+  ['HAVE_DUP3', 'dup3', '#include<unistd.h>'],
 # check token ('HAVE_DYNAMIC_LOADING',)
 # check token ('HAVE_EPOLL',)
   ['HAVE_EPOLL_CREATE1', 'epoll_create1', '#include<sys/epoll.h>'],
@@ -521,7 +521,7 @@ python_src = ['Python/asdl.c',
   'Python/Python-ast.c',
   'Python/pythonrun.c',
   'Python/pytime.c',
-  'Python/strdup.c',
+#  'Python/strdup.c',
   'Python/structmember.c',
   'Python/symtable.c',
   'Python/sysmodule.c',
