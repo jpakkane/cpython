@@ -1,4 +1,5 @@
-project('python', 'c')
+project('python', 'c',
+  default_options : ['c_std=c99'])
 
 thread_dep = dependency('threads')
 
@@ -183,8 +184,8 @@ check_functions = [
   ['HAVE_FTIME', 'ftime', '#include<sys/timeb.h>'],
   ['HAVE_FTRUNCATE', 'ftruncate', '#include<unistd.h>'],
   ['HAVE_FUTIMENS', 'futimens', '#include<sys/stat.h>'],
-  ['HAVE_FUTIMES', 'futimes', '#include<sys/stat.h>'],
-# check token ('HAVE_FUTIMESAT',)
+  ['HAVE_FUTIMES', 'futimes', '#include<sys/time.h>'],
+  ['HAVE_FUTIMESAT', 'futimesat', '#include<sys/time.h>'],
   ['HAVE_GAI_STRERROR', 'gai_strerror', '#include<netdb.h>'],
   ['HAVE_GAMMA', 'gamma', '#include<math.h>'],
 # check token ('HAVE_GCC_ASM_FOR_MC68881',)
@@ -398,7 +399,7 @@ check_functions = [
 ]
 
 foreach f : check_functions
-  if cc.has_function(f.get(1), prefix : f.get(2))
+  if cc.has_function(f.get(1), prefix : f.get(2), args : ['-D_POSIX_C_SOURCE=200809L', '-D_GNU_SOURCE'])
     cdata.set(f.get(0), 1)
   endif
 endforeach
@@ -410,20 +411,39 @@ cdata.set('SIZEOF_INT', cc.sizeof('int'))
 cdata.set('SIZEOF_LONG', cc.sizeof('long'))
 cdata.set('SIZEOF_LONG_DOUBLE', cc.sizeof('long double'))
 cdata.set('SIZEOF_LONG_LONG', cc.sizeof('long long'))
-cdata.set('SIZEOF_OFF_T', cc.sizeof('off_t'))
-cdata.set('SIZEOF_PID_T', cc.sizeof('pid_t', prefix : '#include<unistd.h>'))
-cdata.set('SIZEOF_PTHREAD_T', cc.sizeof('pthread_t'))
+cdata.set('SIZEOF_OFF_T', cc.sizeof('off_t', prefix : '#include<sys/types.h>'))
+cdata.set('SIZEOF_PID_T', cc.sizeof('pid_t', prefix : '#include<sys/types.h>'))
+cdata.set('SIZEOF_PTHREAD_T', cc.sizeof('pthread_t', prefix : '#include<pthread.h>'))
 cdata.set('SIZEOF_SHORT', cc.sizeof('short'))
 cdata.set('SIZEOF_SIZE_T', cc.sizeof('size_t'))
-cdata.set('SIZEOF_TIME_T', cc.sizeof('time_t'), prefix : '#include<time.t>')
-cdata.set('SIZEOF_UINTPTR_T', cc.sizeof('uintptr_t'), prefix : '#include<stdint.h>')
+cdata.set('SIZEOF_TIME_T', cc.sizeof('time_t', prefix : '#include<time.h>'))
+cdata.set('SIZEOF_UINTPTR_T', cc.sizeof('uintptr_t', prefix : '#include<stdint.h>'))
 cdata.set('SIZEOF_VOID_P', cc.sizeof('void*'))
-cdata.set('SIZEOF_WCHAR_T', cc.sizeof('wchar_t'))
+cdata.set('SIZEOF_WCHAR_T', cc.sizeof('wchar_t', prefix : '#include<wchar.h>'))
 #cdata.set('SIZEOF__BOOL', cc.sizeof('_bool'))
+
+# These are set manually. They work on 64 bit Linux.
+# I was too lazy to convert the actual tests.
 
 cdata.set('HAVE_STDARG_PROTOTYPES', 1)
 cdata.set('HAVE_LONG_LONG', 1)
 cdata.set('HAVE_DLOPEN', 1)
+cdata.set('_LARGEFILE_SOURCE', 1)
+cdata.set('_GNU_SOURCE', 1)
+cdata.set('_POSIX_C_SOURCE', '200809L')
+cdata.set('_XOPEN_SOURCE', 700)
+cdata.set('_XOPEN_SOURCE_EXTENDED', 1)
+cdata.set('HAVE_STRUCT_TM_TM_ZONE', 1)
+cdata.set('HAVE_TM_ZONE', 1)
+cdata.set('TIME_WITH_SYS_TIME', 1)
+
+cdata.set('HAVE_DECL_RTLD_DEEPBIND', 1)
+cdata.set('HAVE_DECL_RTLD_GLOBAL', 1)
+cdata.set('HAVE_DECL_RTLD_LAZY', 1)
+cdata.set('HAVE_DECL_RTLD_LOCAL', 1)
+cdata.set('HAVE_DECL_RTLD_NODELETE', 1)
+cdata.set('HAVE_DECL_RTLD_NOLOAD', 1)
+cdata.set('HAVE_DECL_RTLD_NOW', 1)
 
 configure_file(input : 'pyconfig.h.meson',
   output : 'pyconfig.h',
