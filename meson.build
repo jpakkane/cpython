@@ -1,9 +1,10 @@
 project('python', 'c',
   default_options : ['c_std=c99'])
 
-thread_dep = dependency('threads')
-
 cc = meson.get_compiler('c')
+
+thread_dep = dependency('threads')
+m_dep = cc.find_library('m', required : false)
 
 cdata = configuration_data()
 check_headers = [
@@ -436,7 +437,7 @@ cdata.set('_XOPEN_SOURCE_EXTENDED', 1)
 cdata.set('HAVE_STRUCT_TM_TM_ZONE', 1)
 cdata.set('HAVE_TM_ZONE', 1)
 cdata.set('TIME_WITH_SYS_TIME', 1)
-
+cdata.set('WITH_THREAD', 1)
 cdata.set('HAVE_DECL_RTLD_DEEPBIND', 1)
 cdata.set('HAVE_DECL_RTLD_GLOBAL', 1)
 cdata.set('HAVE_DECL_RTLD_LAZY', 1)
@@ -464,7 +465,7 @@ parser_src = ['Parser/acceler.c',
   'Parser/parsetok.c',
   'Parser/parsetok_pgen.c',
   'Parser/pgen.c',
-  'Parser/pgenmain.c',
+#  'Parser/pgenmain.c',
   'Parser/printgrammar.c',
   'Parser/tokenizer.c',
   'Parser/tokenizer_pgen.c',
@@ -529,8 +530,100 @@ python_src = ['Python/asdl.c',
   'Python/_warnings.c',
 ]
 
+object_src = ['Objects/abstract.c',
+  'Objects/accu.c',
+  'Objects/boolobject.c',
+  'Objects/bytearrayobject.c',
+  'Objects/bytes_methods.c',
+  'Objects/bytesobject.c',
+  'Objects/call.c',
+  'Objects/capsule.c',
+  'Objects/cellobject.c',
+  'Objects/classobject.c',
+  'Objects/codeobject.c',
+  'Objects/complexobject.c',
+  'Objects/descrobject.c',
+  'Objects/dictobject.c',
+  'Objects/enumobject.c',
+  'Objects/exceptions.c',
+  'Objects/fileobject.c',
+  'Objects/floatobject.c',
+  'Objects/frameobject.c',
+  'Objects/funcobject.c',
+  'Objects/genobject.c',
+  'Objects/iterobject.c',
+  'Objects/listobject.c',
+  'Objects/longobject.c',
+  'Objects/memoryobject.c',
+  'Objects/methodobject.c',
+  'Objects/moduleobject.c',
+  'Objects/namespaceobject.c',
+  'Objects/object.c',
+  'Objects/obmalloc.c',
+  'Objects/odictobject.c',
+  'Objects/rangeobject.c',
+  'Objects/setobject.c',
+  'Objects/sliceobject.c',
+  'Objects/structseq.c',
+  'Objects/tupleobject.c',
+  'Objects/typeobject.c',
+  'Objects/unicodectype.c',
+  'Objects/unicodeobject.c',
+  'Objects/weakrefobject.c',
+]
+
+module_src = ['Modules/gcmodule.c',
+  'Modules/getpath.c',
+  'Modules/hashtable.c',
+  'Modules/getbuildinfo.c',
+  'Modules/signalmodule.c',
+  'Modules/_tracemalloc.c',
+  'Modules/faulthandler.c',
+  'Modules/config.c', # FIXME, should be generated from the .in file.
+  'Modules/main.c',
+  'Modules/atexitmodule.c',
+  'Modules/posixmodule.c',
+  'Modules/timemodule.c',
+  'Modules/zipimport.c',
+  'Modules/_codecsmodule.c',
+  'Modules/_threadmodule.c',
+  'Modules/itertoolsmodule.c',
+  'Modules/symtablemodule.c',
+  'Modules/errnomodule.c',
+  'Modules/_stat.c',
+  'Modules/_weakref.c',
+  'Modules/_localemodule.c',
+  'Modules/pwdmodule.c',
+  'Modules/_functoolsmodule.c',
+  'Modules/_operator.c',
+  'Modules/_collectionsmodule.c',
+  'Modules/xxsubtype.c',
+  'Modules/_sre.c',
+  'Modules/_io/iobase.c',
+  'Modules/_io/_iomodule.c',
+  'Modules/_io/bufferedio.c',
+  'Modules/_io/fileio.c',
+  'Modules/_io/textio.c',
+  'Modules/_io/stringio.c',
+  'Modules/_io/bytesio.c',
+]
+
+extra_defs = ['-DPYTHONPATH=":"',
+  '-DPREFIX="/usr/local"',
+  '-DEXEC_PREFIX="/usr/local"',
+  '-DVERSION="3.7"',
+  '-DVPATH=""',
+]
+
 pylib = static_library('pylib',
-  parser_src, python_src,
-  c_args : ['-DPy_BUILD_CORE', '-DSOABI="64"'],
-  include_directories : incs)
+  parser_src, python_src, object_src, module_src,
+  c_args : ['-DPy_BUILD_CORE', '-DSOABI="64"'] + extra_defs,
+  include_directories : incs,
+  dependencies : thread_dep)
+
+pyexe = executable('python', 'Programs/python.c',
+  include_directories : incs,
+  link_with : pylib,
+  dependencies : [thread_dep, m_dep])
+
 
