@@ -24,7 +24,7 @@ extern "C" {
 
 
 extern PyObject* PyInit__thread(void);
-extern PyObject* PyInit_posix(void);
+extern PyObject* PyInit_nt(void);
 extern PyObject* PyInit_errno(void);
 extern PyObject* PyInit_pwd(void);
 extern PyObject* PyInit__sre(void);
@@ -58,9 +58,9 @@ extern PyObject* PyInit__string(void);
 struct _inittab _PyImport_Inittab[] = {
 
     {"_thread", PyInit__thread},
-    {"posix", PyInit_posix},
+    {"nt", PyInit_nt},
     {"errno", PyInit_errno},
-    {"pwd", PyInit_pwd},
+    /*    {"pwd", PyInit_pwd}, */
     {"_sre", PyInit__sre},
     {"_codecs", PyInit__codecs},
     {"_weakref", PyInit__weakref},
@@ -69,7 +69,7 @@ struct _inittab _PyImport_Inittab[] = {
     {"_collections", PyInit__collections},
     {"itertools", PyInit_itertools},
     {"atexit", PyInit_atexit},
-    {"_signal", PyInit__signal},
+    /*    {"_signal", PyInit__signal},*/
     {"_stat", PyInit__stat},
     {"time", PyInit_time},
     {"_locale", PyInit__locale},

@@ -413,7 +413,7 @@ cdata.set('SIZEOF_LONG', cc.sizeof('long'))
 cdata.set('SIZEOF_LONG_DOUBLE', cc.sizeof('long double'))
 cdata.set('SIZEOF_LONG_LONG', cc.sizeof('long long'))
 cdata.set('SIZEOF_OFF_T', cc.sizeof('off_t', prefix : '#include<sys/types.h>'))
-cdata.set('SIZEOF_PID_T', cc.sizeof('pid_t', prefix : '#include<sys/types.h>'))
+#cdata.set('SIZEOF_PID_T', cc.sizeof('pid_t', prefix : '#include<sys/types.h>'))
 cdata.set('SIZEOF_PTHREAD_T', cc.sizeof('pthread_t', prefix : '#include<pthread.h>'))
 cdata.set('SIZEOF_SHORT', cc.sizeof('short'))
 cdata.set('SIZEOF_SIZE_T', cc.sizeof('size_t'))
@@ -434,23 +434,23 @@ cdata.set('_GNU_SOURCE', 1)
 cdata.set('_POSIX_C_SOURCE', '200809L')
 cdata.set('_XOPEN_SOURCE', 700)
 cdata.set('_XOPEN_SOURCE_EXTENDED', 1)
-cdata.set('HAVE_STRUCT_TM_TM_ZONE', 1)
-cdata.set('HAVE_TM_ZONE', 1)
-cdata.set('TIME_WITH_SYS_TIME', 1)
+#cdata.set('HAVE_STRUCT_TM_TM_ZONE', 1)
+#cdata.set('HAVE_TM_ZONE', 1)
+#cdata.set('TIME_WITH_SYS_TIME', 1)
 cdata.set('WITH_THREAD', 1)
-cdata.set('HAVE_DECL_RTLD_DEEPBIND', 1)
-cdata.set('HAVE_DECL_RTLD_GLOBAL', 1)
-cdata.set('HAVE_DECL_RTLD_LAZY', 1)
-cdata.set('HAVE_DECL_RTLD_LOCAL', 1)
-cdata.set('HAVE_DECL_RTLD_NODELETE', 1)
-cdata.set('HAVE_DECL_RTLD_NOLOAD', 1)
-cdata.set('HAVE_DECL_RTLD_NOW', 1)
+#cdata.set('HAVE_DECL_RTLD_DEEPBIND', 1)
+#cdata.set('HAVE_DECL_RTLD_GLOBAL', 1)
+#cdata.set('HAVE_DECL_RTLD_LAZY', 1)
+#cdata.set('HAVE_DECL_RTLD_LOCAL', 1)
+#cdata.set('HAVE_DECL_RTLD_NODELETE', 1)
+#cdata.set('HAVE_DECL_RTLD_NOLOAD', 1)
+#cdata.set('HAVE_DECL_RTLD_NOW', 1)
 
 configure_file(input : 'pyconfig.h.meson',
   output : 'pyconfig.h',
   configuration : cdata)
 
-incs = include_directories('Include')
+incs = include_directories('PC', 'Include')
 
 parser_src = ['Parser/acceler.c',
   'Parser/bitset.c',
@@ -479,15 +479,15 @@ python_src = ['Python/asdl.c',
   'Python/codecs.c',
   'Python/compile.c',
   'Python/dtoa.c',
-  'Python/dup2.c',
+#  'Python/dup2.c',
   'Python/dynamic_annotations.c',
 #  'Python/dynload_aix.c',
 #  'Python/dynload_dl.c',
 #  'Python/dynload_hpux.c',
 #  'Python/dynload_next.c',
-  'Python/dynload_shlib.c',
+#  'Python/dynload_shlib.c',
 #  'Python/dynload_stub.c',
-#  'Python/dynload_win.c',
+  'Python/dynload_win.c',
   'Python/errors.c',
   'Python/fileutils.c',
   'Python/formatter_unicode.c',
@@ -528,6 +528,7 @@ python_src = ['Python/asdl.c',
   'Python/thread.c',
   'Python/traceback.c',
   'Python/_warnings.c',
+  'PC/invalid_parameter_handler.c',
 ]
 
 object_src = ['Objects/abstract.c',
@@ -593,7 +594,7 @@ module_src = ['Modules/gcmodule.c',
   'Modules/_stat.c',
   'Modules/_weakref.c',
   'Modules/_localemodule.c',
-  'Modules/pwdmodule.c',
+#  'Modules/pwdmodule.c',
   'Modules/_functoolsmodule.c',
   'Modules/_operator.c',
   'Modules/_collectionsmodule.c',
@@ -602,6 +603,7 @@ module_src = ['Modules/gcmodule.c',
   'Modules/_io/iobase.c',
   'Modules/_io/_iomodule.c',
   'Modules/_io/bufferedio.c',
+  'Modules/_io/winconsoleio.c',
   'Modules/_io/fileio.c',
   'Modules/_io/textio.c',
   'Modules/_io/stringio.c',
@@ -617,13 +619,14 @@ extra_defs = ['-DPYTHONPATH=":"',
 
 pylib = static_library('pylib',
   parser_src, python_src, object_src, module_src,
-  c_args : ['-DPy_BUILD_CORE', '-DSOABI="64"'] + extra_defs,
+  c_args : ['-DPy_BUILD_CORE', '-DSOABI="64"', '-DNT_THREADS', '-DMS_WINDOWS', '-DMS_WIN32', '-DWITH_PYMALLOC', '-Dpid_t=int'] + extra_defs,
   include_directories : incs,
   dependencies : thread_dep)
 
 pyexe = executable('python', 'Programs/python.c',
   include_directories : incs,
   link_with : pylib,
+  link_args : 'Mincore.lib',
   dependencies : [thread_dep, m_dep])
 
 
